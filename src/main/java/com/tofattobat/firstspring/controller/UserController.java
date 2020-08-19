@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping("/show")
-    public List<Product> listAll(@RequestParam String category) {
+    public List<Product> listAll(@RequestParam (required = false) String category) {
         List<Product> products = productRepository.listAll();
         List<Product> result = null;
         for (Product product : products) {
