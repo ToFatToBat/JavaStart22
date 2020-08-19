@@ -1,10 +1,12 @@
 package com.tofattobat.firstspring.repository;
 
 import com.tofattobat.firstspring.model.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ProductRepository {
 
     private List<Product> products;
