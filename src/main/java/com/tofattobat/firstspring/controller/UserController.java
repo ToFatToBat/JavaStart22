@@ -1,8 +1,14 @@
 package com.tofattobat.firstspring.controller;
 
+import com.tofattobat.firstspring.model.Product;
 import com.tofattobat.firstspring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -14,6 +20,15 @@ public class UserController {
         this.productRepository = productRepository;
     }
 
-
-
+    @GetMapping("/show")
+    public List<Product> listAll(@RequestParam String category) {
+        List<Product> products = productRepository.listAll();
+        List<Product> result = null;
+        for (Product product : products) {
+            if (product.getCategory() == category) {
+                result.add(product);
+            }
+        }
+        return result;
+    }
 }
