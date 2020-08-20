@@ -26,7 +26,7 @@ public class UserController {
         List<Product> products = productRepository.listAll();
         List<Product> result = null;
         for (Product product : products) {
-            if (product.getCategory() == category) {
+            if (product.getCategory().equals(category)) {
                 result.add(product);
             }
         }
