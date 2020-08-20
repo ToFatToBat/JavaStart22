@@ -20,6 +20,7 @@ public class UserController {
         this.productRepository = productRepository;
     }
 
+    @ResponseBody
     @GetMapping("/listAll")
     public List<Product> listAll(@RequestParam (required = false) String category) {
         List<Product> products = productRepository.listAll();
