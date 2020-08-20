@@ -22,14 +22,20 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/listAll")
-    public List<Product> listAll(@RequestParam (required = false) String category) {
+    public List<Product> listAll(@RequestParam(required = false) String category) {
         List<Product> products = productRepository.listAll();
         List<Product> result = null;
-        for (Product product : products) {
-            if (product.getCategory().equals(category)) {
-                result.add(product);
+
+        if (category.equals(null) || category.equals("")) {
+            return products;
+
+        } else {
+            for (Product product : products) {
+                if (product.getCategory().equals(category)) {
+                    result.add(product);
+                }
             }
+            return result;
         }
-        return result;
     }
 }
