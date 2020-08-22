@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Controller
 public class UserController {
@@ -27,7 +29,7 @@ public class UserController {
         List<Product> result = null;
 
         if (category == null || category == "") {
-            return result = products;
+            result = products;
         } else {
             result = productRepository.productByCategory(category);
         }
