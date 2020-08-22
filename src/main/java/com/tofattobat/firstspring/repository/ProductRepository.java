@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Repository
 public class ProductRepository {
 
-    private List<Product> products;
+    private static List<Product> products;
 
     public ProductRepository() {
         products = new ArrayList<>();
