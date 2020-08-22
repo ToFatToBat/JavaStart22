@@ -14,10 +14,10 @@ public class ProductRepository {
 
     public ProductRepository() {
         products = new ArrayList<>();
-        products.add(new Product("Pudliszki", 5.55, "grosery"));
-        products.add(new Product("Heinz", 6.20, "grosery"));
-        products.add(new Product("Dawtona", 4.99, "grosery"));
-        products.add(new Product("Pepsi", 5.99, "grosery"));
+        products.add(new Product("Pudliszki", 5.55, "grocery"));
+        products.add(new Product("Heinz", 6.20, "grocery"));
+        products.add(new Product("Dawtona", 4.99, "grocery"));
+        products.add(new Product("Pepsi", 5.99, "grocery"));
         products.add(new Product("Patelnia - Tefal", 43.99, "houseHold"));
         products.add(new Product("Philips - Blender", 150, "houseHold"));
         products.add(new Product("Noze - Fiskars", 150, "houseHold"));
