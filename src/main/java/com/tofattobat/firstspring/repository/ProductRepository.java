@@ -12,7 +12,7 @@ public class ProductRepository {
     private List<Product> products;
 
     public ProductRepository() {
-
+        products = new ArrayList<>();
         products.add (new Product("Pudliszki", 5.55, "Art. spozywcze"));
         products.add (new Product("Heinz", 6.20, "Art. spozywcze"));
         products.add (new Product("Dawtona", 4.99, "Art. spozywcze"));

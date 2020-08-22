@@ -22,7 +22,7 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/listAll")
-    public List<Product> listAll(@RequestParam(required = false) String category) {
+    public List<Product> productListAll(@RequestParam(required = false) String category) {
         List<Product> products = productRepository.listAll();
         List<Product> result = null;
 
