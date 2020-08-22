@@ -26,16 +26,13 @@ public class UserController {
         List<Product> products = productRepository.listAll();
         List<Product> result = null;
 
-        if (category.equals(null) || category.equals("")) {
-            return products;
-
+        if (category == null || category == "") {
+            return result = products;
         } else {
-            for (Product product : products) {
-                if (product.getCategory().equals(category)) {
-                    result.add(product);
-                }
-            }
-            return result;
+            result = productRepository.productByCategory(category);
         }
+        return result;
     }
 }
+
+
