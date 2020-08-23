@@ -1,5 +1,6 @@
 package com.tofattobat.firstspring.controller;
 
+import com.tofattobat.firstspring.model.Category;
 import com.tofattobat.firstspring.model.Product;
 import com.tofattobat.firstspring.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +25,11 @@ public class UserController {
 
     @ResponseBody
     @GetMapping("/listAll")
-    public List<Product> productListAll(@RequestParam(required = false) String category) {
-        List<Product> products = productRepository.listAll();
+    public List<Product> productListAll(@RequestParam(required = false) Category category) {
         List<Product> result = null;
 
-        if (category == null || category == "") {
-            result = products;
+        if (category == null || category.equals("")) {
+            result = productRepository.listAll();
         } else {
             result = productRepository.productByCategory(category);
         }
