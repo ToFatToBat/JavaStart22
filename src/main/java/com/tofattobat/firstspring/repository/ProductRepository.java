@@ -36,7 +36,9 @@ public class ProductRepository {
         return products.stream()
                 .filter(product -> product.getCategory().equals(category))
                 .collect(Collectors.toList());
+    }
 
-
+    public void add(Product product) {
+        products.add(product);
     }
 }
